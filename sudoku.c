@@ -44,7 +44,7 @@ void print_node(Node *n) {
 
 int is_valid(Node *n) {
   int nRep[10];
-  int i,j,k,a,b;
+  int i,j,k,a;//,b;
   
   // Inicializar nRep[a] -> 0
   for (a = 0; a < 10; a++) nRep[a] = 0;
