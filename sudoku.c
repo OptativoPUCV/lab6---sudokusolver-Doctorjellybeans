@@ -44,13 +44,26 @@ void print_node(Node *n) {
 
 int is_valid(Node *n) {
   int nRep[10];
-  //int i,j,k,a,b;
-  int a;
-
+  int i,j,k,a,b;
+  
   // Inicializar nRep[a] -> 0
   for (a = 0; a < 10; a++) nRep[a] = 0;
 
-  printf("valor: %d",nRep[2]);
+  // Validar filas
+  for (i = 0; i < 9; i++){
+    for (j = 0; j < 9; j++){
+      nRep[n->sudo[i][j]]++;
+    }
+
+    for (k = 1; k < 10; k++){
+      if (nRep[k] > 1) return 0;
+    }
+
+    for(a = 0; a < 10; a++){
+      nRep[a] = 0;
+    }
+  }
+  
   
   return 1; 
 }
