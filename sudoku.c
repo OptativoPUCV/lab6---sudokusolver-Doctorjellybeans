@@ -44,62 +44,61 @@ void print_node(Node *n) {
 
 int is_valid(Node *n) {
   int nRep[10];
-  int i,j,k,a;//,b;
-  
+  int i, j, k, a; //,b;
+
   // Inicializar nRep[a] -> 0
-  for (a = 0; a < 10; a++) nRep[a] = 0;
+  for (a = 0; a < 10; a++)
+    nRep[a] = 0;
 
   // Validar filas
-  for (i = 0; i < 9; i++){
-    for (j = 0; j < 9; j++){
+  for (i = 0; i < 9; i++) {
+    for (j = 0; j < 9; j++) {
       nRep[n->sudo[i][j]]++;
     }
 
-    for (k = 1; k < 10; k++){
-      if (nRep[k] > 1) return 0;
+    for (k = 1; k < 10; k++) {
+      if (nRep[k] > 1)
+        return 0;
     }
 
-    for(a = 0; a < 10; a++){
+    for (a = 0; a < 10; a++) {
       nRep[a] = 0;
     }
   }
 
   // Validar columnas
-  // Inicializar nRep[a] -> 0
-  for (a = 0; a < 10; a++) nRep[a] = 0;
-
-  // Validar filas
-  for (i = 0; i < 9; i++){
-    for (j = 0; j < 9; j++){
+  for (i = 0; i < 9; i++) {
+    for (j = 0; j < 9; j++) {
       nRep[n->sudo[i][j]]++;
     }
 
-    for (k = 1; k < 10; k++){
-      if (nRep[k] > 1) return 0;
+    for (k = 1; k < 10; k++) {
+      if (nRep[k] > 1)
+        return 0;
     }
 
-    for(a = 0; a < 10; a++){
+    for (a = 0; a < 10; a++) {
       nRep[a] = 0;
     }
   }
-  
-  
-  return 1; 
+
+  return 1;
 }
 
 List *get_adj_nodes(Node *n) {
   List *list = createList();
-  int i,j,k;
+  int i, j, k;
 
-  for (i = 0; i < 9; i++){
-    for (j = 0; j < 9; j++){
-      if (n->sudo[i][j] == 0){
-        for (k = 0; k < 9; k++){
-          Node* adj_n = createNode();
+  for (i = 0; i < 9; i++) {
+    for (j = 0; j < 9; j++) {
+      if (n->sudo[i][j] == 0) {
+        for (k = 0; k < 9; k++) {
+          Node *adj_n = createNode();
           adj_n = copy(n);
           adj_n->sudo[i][j] = k + 1;
-          
-          if (is_valid(adj_n)) pushBack(list, adj_n);
+
+          if (is_valid(adj_n))
+            pushBack(list, adj_n);
         }
         return list;
       }
