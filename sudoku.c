@@ -42,7 +42,17 @@ void print_node(Node *n) {
   printf("\n");
 }
 
-int is_valid(Node *n) { return 1; }
+int is_valid(Node *n) {
+  int nRep[10];
+  int i,j,k,a,b;
+
+  // Inicializar nRep[a] -> 0
+  for (a = 0; a < 10; a++) nRep[a] = 0;
+
+  printf("%d",nRep[1]);
+  
+  return 1; 
+}
 
 List *get_adj_nodes(Node *n) {
   List *list = createList();
