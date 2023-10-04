@@ -69,7 +69,7 @@ int is_valid(Node *n) {
   // Validar columnas
   for (i = 0; i < 9; i++) {
     for (j = 0; j < 9; j++) {
-      nRep[n->sudo[i][j]]++;
+      nRep[n->sudo[j][i]]++; // lol
     }
 
     for (k = 1; k < 10; k++) {
