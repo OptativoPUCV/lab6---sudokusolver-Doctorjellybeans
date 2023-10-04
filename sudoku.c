@@ -51,11 +51,8 @@ List *get_adj_nodes(Node *n) {
   for (i = 0; i < 9; i++){
     for (j = 0; j < 9; j++){
       if (n->sudo[i][j] == 0){
-        for (k = 0; k < 0; k++){
+        for (k = 0; k < 9; k++){
           Node* adj_n = createNode();
-          adj_n = copy(n);
-          adj_n = copy(n);
-          adj_n = copy(n);
           adj_n = copy(n);
           adj_n->sudo[i][j] = k + 1;
           
