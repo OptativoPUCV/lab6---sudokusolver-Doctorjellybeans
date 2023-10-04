@@ -63,6 +63,25 @@ int is_valid(Node *n) {
       nRep[a] = 0;
     }
   }
+
+  // Validar columnas
+  // Inicializar nRep[a] -> 0
+  for (a = 0; a < 10; a++) nRep[a] = 0;
+
+  // Validar filas
+  for (i = 0; i < 9; i++){
+    for (j = 0; j < 9; j++){
+      nRep[n->sudo[i][j]]++;
+    }
+
+    for (k = 1; k < 10; k++){
+      if (nRep[k] > 1) return 0;
+    }
+
+    for(a = 0; a < 10; a++){
+      nRep[a] = 0;
+    }
+  }
   
   
   return 1; 
