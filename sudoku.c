@@ -50,7 +50,7 @@ int is_valid(Node *n) {
   // Inicializar nRep[a] -> 0
   for (a = 0; a < 10; a++) nRep[a] = 0;
 
-  printf("%d",nRep[1]);
+  printf("%d",nRep[2]);
   
   return 1; 
 }
