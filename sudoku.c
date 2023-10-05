@@ -82,19 +82,19 @@ int is_valid(Node *n) {
     }
   }
 
-  for (k = 0; k < 9; k++){
-    for (b = 0; b < 9; b++){
-      i = 3*(k/3) + (b/3);
-      j = 3*(k%3) + (b%3);
+  for (k = 0; k < 9; k++) {
+    for (b = 0; b < 9; b++) {
+      i = 3 * (k / 3) + (b / 3);
+      j = 3 * (k % 3) + (b % 3);
       nRep[n->sudo[i][j]]++;
     }
 
-    for (i = 1; i < 10; i++){
-      if (nRep[i] > 1){
+    for (i = 1; i < 10; i++) {
+      if (nRep[i] > 1) {
         return 0;
       }
 
-      for (a = 0; a < 10; a++){
+      for (a = 0; a < 10; a++) {
         nRep[a] = 0;
       }
     }
@@ -126,7 +126,18 @@ List *get_adj_nodes(Node *n) {
   return list;
 }
 
-int is_final(Node *n) { return 0; }
+int is_final(Node *n){
+  int i,j;
+
+  for (i = 0; i < 9; i++){
+    for (j = 0; j < 9; j++){
+      if (n->sudo[i][j] == 0){
+        return 0;
+      }
+    }
+  }
+  return 1;
+}
 
 Node *DFS(Node *initial, int *cont) { return NULL; }
 
