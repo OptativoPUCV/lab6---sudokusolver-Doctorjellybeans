@@ -161,14 +161,16 @@ Node *DFS(Node *initial, int *cont){
 
       push(stack, adj_node);
     }
-    clean (adj_nodes);
+    clean(adj_nodes);
+
+    free(current);
   }
   
   return NULL;
 }
 
 
-
+/*
 int main( int argc, char *argv[] ){
 
   Node* initial= read_file("s12a.txt");;
@@ -179,4 +181,4 @@ int main( int argc, char *argv[] ){
   print_node(final);
 
   return 0;
-}
+}*/
