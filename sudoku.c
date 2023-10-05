@@ -103,6 +103,25 @@ int is_valid(Node *n) {
   return 1;
 }
 
+/*
+**¿Cómo recorrer las submatrices de 3x3?**
+El siguiente código se puede usar para recorrer los elementos de una sumbatriz k (por ejemplo k=4):
+
+    int k=4,p; 
+    for(p=0;p<9;p++){
+        int i=3*(k/3) + (p/3) ;
+        int j=3*(k%3) + (p%3) ;
+        printf("%d ",nodo->sudo[i][j]);
+        if(p%3 == 2) printf("\n");
+    }
+
+La salida del código con el estado de la figura es (submatriz del centro):
+    
+    0 6 0
+    8 0 3
+    0 2 0
+*/
+
 List *get_adj_nodes(Node *n) {
   List *list = createList();
   int i, j, k;
@@ -115,8 +134,12 @@ List *get_adj_nodes(Node *n) {
           adj_n = copy(n);
           adj_n->sudo[i][j] = k + 1;
 
-          if (is_valid(adj_n))
+          if (is_valid(adj_n)){
             pushBack(list, adj_n);
+          } else {
+            free(adj_n);
+          }
+          
         }
         return list;
       }
@@ -144,6 +167,7 @@ Node *DFS(Node *initial, int *cont){
   push(stack, initial);
 
   while (!is_empty(stack)){
+    ?
     Node* current = (Node*)top(stack);
     pop(stack);
 
@@ -167,6 +191,7 @@ Node *DFS(Node *initial, int *cont){
   }
   
   return NULL;
+  */
 }
 
 
