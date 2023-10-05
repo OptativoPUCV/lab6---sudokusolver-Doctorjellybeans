@@ -167,7 +167,7 @@ Node *DFS(Node *initial, int *cont){
   push(stack, initial);
 
   while (!is_empty(stack)){
-    ?
+    /*
     Node* current = (Node*)top(stack);
     pop(stack);
 
@@ -192,6 +192,7 @@ Node *DFS(Node *initial, int *cont){
   
   return NULL;
   */
+  return NULL;
 }
 
 
