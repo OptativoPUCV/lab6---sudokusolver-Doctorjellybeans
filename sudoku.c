@@ -139,7 +139,11 @@ int is_final(Node *n){
   return 1;
 }
 
-Node *DFS(Node *initial, int *cont) { return NULL; }
+Node *DFS(Node *initial, int *cont){
+
+  return NULL;
+}
+
 
 /*
 int main( int argc, char *argv[] ){
