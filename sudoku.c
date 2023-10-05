@@ -84,8 +84,8 @@ int is_valid(Node *n) {
 
   for (k = 0; k < 9; k++){
     for (b = 0; b < 9; b++){
-      i = 3*(k/3)+(b/3);
-      j = 3*(a%3)+(b%3);
+      i = 3*(k/3) + (b/3);
+      j = 3*(k%3) + (b%3);
       nRep[n->sudo[i][j]]++;
     }
 
